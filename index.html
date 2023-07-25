@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+        <script src="app.js"></script>
+        <link rel="manifest" href="manifest.json">
+
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="application-name" content="mypwa">
+<meta name="apple-mobile-web-app-title" content="mypwa">
+<meta name="msapplication-starturl" content="/">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" type="png" sizes="512x512" href="pop.png">
+<link rel="apple-touch-icon" type="png" sizes="512x512" href="pop.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML5 и CSS3 сайт</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+    <div id="logo" onclick="slowScroll('#top')">
+      <span>Caxar.com</span>
+    </div>
+    <div id="about">
+      <a href="#" title="Возможности" onclick="slowScroll('#main')">Возможности</a>
+      <a href="#" onclick="slowScroll('#overview')" title="Преимущества">Преимущества</a>
+      <a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
+      <a href="#" onclick="slowScroll('#faq')" title="Ответы на вопросы">FAQ</a>
+    </div>
+  </header>
+
+  <div id="top">
+    <h1>Маленькими шагами</h1>
+    <h3>К большим свершениям</h3>
+  </div>
+
+  <div id="main">
+    <div class="intro">
+      <h2>Учись, стремись, шагай вперёд</h2>
+      <span>Немного мотивации и демонстрации</span>
+    </div>
+    <div class="text">
+      <span>Работа в нашей команде, позволит нам обмениваться опытом и достигать новых, ранее недоступных целей. В команде мы сможем курировать крупные проекты, а также оказывать более компетентную помощь нашим клиентам.</span>
+    </div>
+  </div>
+
+  <div id="overview">
+    <h2>Преимущества</h2>
+    <h4>Легкость, быстрота, множество практики</h4>
+
+    <div class="img">
+      <img src="https://static.tildacdn.com/tild3861-3065-4637-b161-373231643435/clovertec_bannerimag.png" alt="">
+      <span>Изучение новой информации</span>
+    </div>
+    <div class="img">
+      <img src="https://newtvnews.ru/wp-content/uploads/2020/09/bigstock-205059841-2.jpg" alt="">
+      <span>Совместное обучение и работа с теми, кто разделяет наши взгляды</span>
+    </div>
+  </div>
+
+  <div id="contacts">
+    <center><h5>Обратная связь</h5></center>
+    <form id="form_input" method="post" action="testik.php">
+      <label for="name">Имя <span>*</span></label><br>
+      <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+      <label for="email">Ваша почта <span>*</span></label><br>
+			<input type="email" placeholder="Введите email" name="email" id="email"><br>
+			<label for="message">Сообщение <span>*</span></label><br>
+			<textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+			<div id="mess_send" class="btn">Отправить</div>
+    </form>
+  </div>
+
+  <div id="faq">
+    <div>
+      <span class="title">Финансы</span><br>
+      <span class="heading">Как будет проходит оплата?</span>
+      <p>Оплата будет проходит в режиме выполненной работы, а также проценты за дополнительные заказы</p>
+     
+    </div>
+    <div>
+      <span class="title">График работы</span><br>
+      <span class="heading">Свободный, а также связь со своим клиентом</span>
+      <p>Мы стараемся отвечать каждому, но самое важное - ваша работа и ваш клиент. Забота о данном человеке - ваш вклад в ваше будущее </p>
+    </div>
+    <div>
+      <span class="title">Например: Гарантии</span><br>
+      <span class="heading">Какие гарантии?</span>
+      <p>Заверения, а также наше сертификаты! Ну и конечно же ГК РФ Статья 722. Гарантия качества работы</p>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+</body>
+</html>
